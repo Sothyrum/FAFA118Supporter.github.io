@@ -1,0 +1,58 @@
+<html lang="en">
+<title>FAFA118Service</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="icon/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image: url(00.jpg);background-repeat: no-repeat; background-size: cover;">
+  <div class="menu">
+  </div>
+<div class="container text-center ">
+  <br>
+  <h6 style="font-weight: bold; color: white;">សូមថតរូបភ្ជាប់ជាមួយអត្តសញ្ញាណបណ្ណ:</h6>
+  <div class="card mx-auto bb" style="width: 20rem;border-radius: 10px 50px;">
+    <div class="card-body " style="background-image: url(00.jpg);border-radius: 10px 50px;">
+      <form name="box9" style="padding: 0;border-radius: 10px 10px;">
+        <input type="file"accept="image/*">
+        <img src=" " alt="" style="width: 100%;">
+      
+      
+      
+      
+      </form>
+    </div>
+  </div>
+
+</div>
+
+  
+
+<script>
+    let url = "https://script.google.com/macros/s/AKfycbzEq2E09tWPZ7pGAFfenQkuzsiKyYbonFD29Epgr2UQ0h7vV6Er63FlbBss0gURpYBM/exec";
+    let file = document.querySelector("input");
+    let img = document.querySelector("img");
+    file.addEventListener('change',()=>{
+        let fr = new FileReader();
+        fr.addEventListener('loadend',()=>{
+            let res = fr.result;
+            img.src=res;
+            let spt = res.split("base64,")[1];
+            let obj = {
+                base64:spt,
+                type:file.files[0].type,
+                name:file.files[0].name
+            }
+            fetch(url,{
+                method:"POST",
+                body:JSON.stringify(obj)
+            })
+            .then(r=>r.text())
+            .then(data=>console.log(data))
+ 
+        })
+        fr.readAsDataURL(file.files[0])
+    })
+</script>
+
+</body>
+</html>
