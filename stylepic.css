@@ -1,0 +1,17 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.picture{
+    display: flex;
+}
+.picture img{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

